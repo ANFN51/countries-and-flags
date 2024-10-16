@@ -1,0 +1,16 @@
+.flags {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+
+
+.flags img {
+    width: 200px;  
+    height: auto;
+    transition: opacity 0.3s ease-in-out; 
+}
+
+.flags img:hover {
+    opacity: 0.8; 
+}
