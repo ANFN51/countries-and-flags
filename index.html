@@ -4,7 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countries and Flags</title>
-    <link rel="stylesheet" href="styles/styles.css">
+
+    <style>
+        
+        .flags {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .flags img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .flags img:hover {
+            opacity: 0.8;
+        }
+
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 2em;
+            color: #333;
+        }
+    </style>
     <script src="scripts/flags.js" defer></script>
 </head>
 <body>
@@ -16,4 +45,3 @@
     </div>
 </body>
 </html>
-
