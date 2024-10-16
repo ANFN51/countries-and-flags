@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         header.textContent = flagData[slideIndex].headerText;
     }
-
     setInterval(showNextSlide, 3000);
 });
+
 
