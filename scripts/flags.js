@@ -1,3 +1,4 @@
+console.log("JavaScript is connected.");
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector('h1');
 
