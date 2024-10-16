@@ -6,22 +6,32 @@ document.addEventListener("DOMContentLoaded", () => {
     let slideIndex = 0;
 
     const flagData = [
-        { country: "United States", headerText: "United States" },
-        { country: "China", headerText: "China" },
-        { country: "India", headerText: "India" }
+        { id: "usa-flag", country: "United States", mapSrc: "images/map_usa.png", flagSrc: "images/flag_usa.png" },
+        { id: "china-flag", country: "China", mapSrc: "images/map_china.png", flagSrc: "images/flag_china.png" },
+        { id: "india-flag", country: "India", mapSrc: "images/map_india.png", flagSrc: "images/flag_india.png" }
     ];
 
     function showNextSlide() {
         slides[slideIndex].classList.remove('active');
-
         slideIndex = (slideIndex + 1) % slides.length;
-
         slides[slideIndex].classList.add('active');
-
-        header.textContent = flagData[slideIndex].headerText;
+        header.textContent = flagData[slideIndex].country;
     }
+
+
+    flagData.forEach((flag, index) => {
+        const img = document.getElementById(flag.id);
+
+        img.addEventListener("mouseover", () => {
+            img.src = flag.mapSrc;
+            header.textContent = flag.country; 
+        });
+
+        img.addEventListener("mouseout", () => {
+            img.src = flag.flagSrc; 
+            header.textContent = "Countries and Flags";
+        });
+    });
+
     setInterval(showNextSlide, 3000);
 });
-
-
-
