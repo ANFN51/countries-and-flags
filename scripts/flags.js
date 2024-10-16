@@ -7,18 +7,26 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "india-flag", country: "India", mapSrc: "images/map_india.png", flagSrc: "images/flag_india.png" }
     ];
 
+
     flags.forEach(flag => {
         const img = document.getElementById(flag.id);
         
         img.addEventListener("mouseover", () => {
-            img.src = flag.mapSrc; 
-            header.textContent = flag.country; 
+            img.style.opacity = 0; 
+            setTimeout(() => {
+                img.src = flag.mapSrc; 
+                img.style.opacity = 1; 
+            }, 300); 
+            header.textContent = flag.country;  
         });
         
         img.addEventListener("mouseout", () => {
-            img.src = flag.flagSrc;  
+            img.style.opacity = 0;  
+            setTimeout(() => {
+                img.src = flag.flagSrc; 
+                img.style.opacity = 1; 
+            }, 300); 
             header.textContent = "Countries and Flags"; 
         });
     });
 });
-
